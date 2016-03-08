@@ -1,21 +1,11 @@
 package base;
 
-import static org.junit.Assert.*;
-
-import org.junit.Before;
 import org.junit.Test;
+import base.InsufficientFundsException;
 
 public class AcountTestCase {
-	Account test = new Account(1122, 2000.0);
-	
-//	@Before
-//	public static void withdraw() throws Exception {
-//	}
-//	@Test(expected = InsufficientFundsException.class)
-//	public void OverDraw() throws Exception{
-//		test.withdraw(50000.0);	
-//		
-//	}
+	Account test = new Account(1122, 2000.0);	
+
 	@Test
 	public void test() {
 		test.setId(1122);
@@ -26,5 +16,10 @@ public class AcountTestCase {
 		System.out.println("Your balance is: "+ test.getBalance()+ ", monthly interest: " + 
 				test.getMonthlyInterestRate()*100 + "% and the date of the account created: "+ test.getDateCreated());
 	}
-
+	// Exception Test
+	@Test(expected = InsufficientFundsException.class)
+	public void OverDraw() throws InsufficientFundsException{
+		test.withdraw(50000.0);	
+		
+	}
 }

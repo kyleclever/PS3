@@ -64,8 +64,15 @@ public class Account {
 
 	public void withdraw(double withdrawAmount) {
 		balance = balance - withdrawAmount;
-
 	}
+
+	// public void withdraw(double withdrawAmount) throws
+	// InsufficientFundsException {
+	// if (withdrawAmount < balance)
+	// throw new InsufficientFundsException('Insufficient Balance');
+	// else
+	// balance = balance - withdrawAmount;
+	// }
 
 	public void deposit(double depositAmount) {
 		balance = balance + depositAmount;
