@@ -2,11 +2,20 @@ package base;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class AcountTestCase {
 	Account test = new Account(1122, 2000.0);
-
+	
+//	@Before
+//	public static void withdraw() throws Exception {
+//	}
+//	@Test(expected = InsufficientFundsException.class)
+//	public void OverDraw() throws Exception{
+//		test.withdraw(50000.0);	
+//		
+//	}
 	@Test
 	public void test() {
 		test.setId(1122);
