@@ -6,8 +6,7 @@ public class Account {
 	private int id = 0;
 	private double balance = 0.0;
 	private double annuallnterestRate = 0.0;
-	// Date dateCreated = new Date();
-	private Date dateCreated;
+	private Date dateCreated = new Date();
 
 	/**
 	 * A no-arg constructor that creates a default account.
