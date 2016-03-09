@@ -1,10 +1,10 @@
 package base;
 
-import java.io.*;
 /**
  * Custom class for throwing an insufficient funds exception
  */
 public class InsufficientFundsException extends Exception {
+
 	private double amount;
 
 	/**
@@ -19,12 +19,4 @@ public class InsufficientFundsException extends Exception {
 		return amount;
 	}
 
-//	Account test = new Account();
-//
-//	public void withdraw(double withdrawAmount) throws InsufficientFundsException {
-//		if (withdrawAmount < test.getBalance()) {
-//			throw new InsufficientFundsException(withdrawAmount);
-//		}
-
-	}
-
+}

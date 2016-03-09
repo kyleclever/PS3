@@ -24,7 +24,8 @@ public class Account {
 	}
 
 	/**
-	 * The accessor and mutator methods for id, balance, and annualInterestRate.
+	 * The accessory and mutator methods for id, balance, and
+	 * annualInterestRate.
 	 */
 	public int getId() {
 		return id;
@@ -51,7 +52,7 @@ public class Account {
 	}
 
 	/**
-	 * The accessor method for dateCreated.
+	 * The accessory method for dateCreated.
 	 */
 	public Date getDateCreated() {
 		return dateCreated;
@@ -62,17 +63,20 @@ public class Account {
 		return monthlyInterestRate;
 	}
 
-	public void withdraw(double withdrawAmount) {
-		balance = balance - withdrawAmount;
-	}
+	/**
+	 * @param withdrawAmount
+	 * @throws InsufficientFundsException
+	 */
+	public void withdraw(double withdrawAmount) throws InsufficientFundsException {
 
-	// public void withdraw(double withdrawAmount) throws
-	// InsufficientFundsException {
-	// if (withdrawAmount < balance)
-	// throw new InsufficientFundsException('Insufficient Balance');
-	// else
-	// balance = balance - withdrawAmount;
-	// }
+		if (withdrawAmount > balance) {
+			System.out.println("Sorry, you have a insufficient balance");
+			throw new InsufficientFundsException(withdrawAmount);
+
+		} else {
+			balance = balance - withdrawAmount;
+		}
+	}
 
 	public void deposit(double depositAmount) {
 		balance = balance + depositAmount;

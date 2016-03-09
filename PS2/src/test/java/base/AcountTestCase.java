@@ -1,13 +1,13 @@
 package base;
 
 import org.junit.Test;
-import base.InsufficientFundsException;
+
 
 public class AcountTestCase {
-	Account test = new Account(1122, 2000.0);	
+	Account test = new Account(1122, 20000);	
 
 	@Test
-	public void test() {
+	public void test() throws InsufficientFundsException{
 		test.setId(1122);
 		test.setBalance(20000.0);
 		test.setAnnuallnterestRate(0.045);
